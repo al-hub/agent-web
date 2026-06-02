@@ -1,0 +1,32 @@
+[
+  {
+    "title":"GeekNews",
+    "category":"AI·기술",
+    "mode":"proxy",
+    "url":"https://news.hada.io"
+  },
+  {
+    "title":"Simon Willison",
+    "category":"AI·기술",
+    "mode":"proxy",
+    "url":"https://simonwillison.net"
+  },
+  {
+    "title":"Quanta Magazine",
+    "category":"과학",
+    "mode":"proxy",
+    "url":"https://www.quantamagazine.org"
+  },
+  {
+    "title":"SpaceAware",
+    "category":"우주·지도",
+    "mode":"external",
+    "url":"https://spaceaware.io"
+  },
+  {
+    "title":"스테이폴리오",
+    "category":"숙소",
+    "mode":"external",
+    "url":"https://www.stayfolio.com"
+  }
+]
