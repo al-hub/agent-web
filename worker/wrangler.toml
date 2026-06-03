@@ -1,0 +1,5 @@
+name = "hybrid-explorer-v15"
+main = "src/index.js"
+compatibility_date = "2026-06-02"
+workers_dev = true
+

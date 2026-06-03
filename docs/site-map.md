@@ -6,15 +6,17 @@ Primary exploration targets:
 
 - GeekNews
 - Simon Willison
-- Quanta
 - HORIZON
-- KIET
+- Quanta Magazine
 - KDI
-- Visual Capitalist
+- KIET
+- Morgan Housel
 - World History Encyclopedia
+- The Marginalian
+- 서울사랑
+- Visual Capitalist
+- Aeon
+- Nautilus
 - Google Arts & Culture
-- National Museum of Korea
 - SpaceAware
 - Stayfolio
-- Blue Ribbon Survey
-- The Marginalian

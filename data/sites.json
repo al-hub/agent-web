@@ -1,32 +1,116 @@
 [
   {
-    "title":"GeekNews",
-    "category":"AI·기술",
-    "mode":"proxy",
-    "url":"https://news.hada.io"
+    "title": "GeekNews",
+    "category": "AI·기술",
+    "mode": "proxy",
+    "url": "https://news.hada.io/",
+    "desc": "한국 개발자 뉴스 커뮤니티"
   },
   {
-    "title":"Simon Willison",
-    "category":"AI·기술",
-    "mode":"proxy",
-    "url":"https://simonwillison.net"
+    "title": "Simon Willison",
+    "category": "AI·기술",
+    "mode": "proxy",
+    "url": "https://simonwillison.net/",
+    "desc": "AI, LLM, 데이터 탐구"
   },
   {
-    "title":"Quanta Magazine",
-    "category":"과학",
-    "mode":"proxy",
-    "url":"https://www.quantamagazine.org"
+    "title": "HORIZON",
+    "category": "AI·기술",
+    "mode": "proxy",
+    "url": "https://horizon-magazine.eu/",
+    "desc": "과학·수학·사유형 매거진"
   },
   {
-    "title":"SpaceAware",
-    "category":"우주·지도",
-    "mode":"external",
-    "url":"https://spaceaware.io"
+    "title": "Quanta Magazine",
+    "category": "과학",
+    "mode": "proxy",
+    "url": "https://www.quantamagazine.org/",
+    "desc": "수학·물리·생명과학"
   },
   {
-    "title":"스테이폴리오",
-    "category":"숙소",
-    "mode":"external",
-    "url":"https://www.stayfolio.com"
+    "title": "KDI",
+    "category": "경제",
+    "mode": "proxy",
+    "url": "https://www.kdi.re.kr/",
+    "desc": "한국개발연구원"
+  },
+  {
+    "title": "KIET",
+    "category": "경제",
+    "mode": "proxy",
+    "url": "https://www.kiet.re.kr/en/",
+    "desc": "산업·기술 연구기관"
+  },
+  {
+    "title": "Morgan Housel",
+    "category": "경제",
+    "mode": "proxy",
+    "url": "https://www.morganhousel.com/",
+    "desc": "돈과 행동에 대한 사유"
+  },
+  {
+    "title": "World History Encyclopedia",
+    "category": "문명·역사",
+    "mode": "proxy",
+    "url": "https://www.worldhistory.org/",
+    "desc": "세계사 백과"
+  },
+  {
+    "title": "The Marginalian",
+    "category": "문명·역사",
+    "mode": "proxy",
+    "url": "https://www.themarginalian.org/",
+    "desc": "삶·예술·철학"
+  },
+  {
+    "title": "서울사랑",
+    "category": "도시·생활",
+    "mode": "proxy",
+    "url": "https://love.seoul.go.kr/",
+    "desc": "서울 라이프스타일 매거진"
+  },
+  {
+    "title": "Aeon",
+    "category": "읽기·사유",
+    "mode": "external",
+    "url": "https://aeon.co/",
+    "desc": "긴 글 사유형 매거진 · 원문 열기"
+  },
+  {
+    "title": "Nautilus",
+    "category": "읽기·사유",
+    "mode": "remote",
+    "url": "https://nautil.us/",
+    "desc": "과학과 철학의 장문 읽기",
+    "bridgeDebug": true
+  },
+  {
+    "title": "Visual Capitalist",
+    "category": "시각화",
+    "mode": "remote",
+    "url": "https://www.visualcapitalist.com/",
+    "desc": "경제·산업 시각화",
+    "bridgeDebug": true
+  },
+  {
+    "title": "Google Arts & Culture",
+    "category": "탐험·이미지",
+    "mode": "external",
+    "url": "https://artsandculture.google.com/",
+    "desc": "3D 전시·이미지 탐험"
+  },
+  {
+    "title": "SpaceAware",
+    "category": "탐험·이미지",
+    "mode": "external",
+    "url": "https://spaceaware.io/",
+    "desc": "우주 시각화"
+  },
+  {
+    "title": "Stayfolio",
+    "category": "숙소",
+    "mode": "external",
+    "url": "https://www.stayfolio.com/",
+    "desc": "감성 숙소 탐험"
   }
 ]

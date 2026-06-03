@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hybrid Explorer v15 - Proxy Browser 기반 개인 세계관 탐험 브라우저"
+    />
+    <title>Hybrid Explorer v15</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="left-pane" aria-label="Site map">
+        <header class="hero-card">
+          <div class="eyebrow">HYBRID EXPLORER · V15</div>
+          <h1>세계관 탐험 시스템</h1>
+          <p class="subtitle">
+            Proxy Browser 기반으로 사이트 클릭, 현재 URL 추적, URL 복사, 탐험 저장을
+            한 화면에서 다룹니다.
+          </p>
+        </header>
+
+        <div class="left-head">
+          <div class="left-title">Curated Site Map</div>
+          <div class="left-meta">
+            <span id="site-count">0 sites</span>
+            <span class="dot"></span>
+            <span>localStorage history</span>
+          </div>
+        </div>
+
+        <nav id="site-map" class="site-map" aria-label="Curated site map"></nav>
+
+        <section class="history-card">
+          <div class="history-head">
+            <h2>탐험 저장 이력</h2>
+            <button id="clear-history" type="button">이력 삭제</button>
+          </div>
+          <div id="history-list" class="history-list"></div>
+        </section>
+      </aside>
+
+      <div class="resizer" id="resizer" aria-hidden="true"></div>
+
+      <section class="right-pane" aria-label="Exploration window">
+        <header class="viewer-top">
+          <div class="viewer-title">
+            <strong>
+              <button id="viewer-title-link" class="viewer-title-link" type="button">
+                탐험할 사이트를 선택하세요
+              </button>
+            </strong>
+            <span id="viewer-desc">
+              왼쪽 리스트에서 사이트를 누르면 자동으로 읽기 모드로 전환됩니다.
+            </span>
+          </div>
+          <div class="viewer-actions" aria-label="Exploration actions">
+            <button id="btn-home" type="button">첫화면</button>
+            <button id="btn-copy" type="button">URL복사</button>
+            <button id="btn-save" type="button">탐험저장</button>
+            <button id="btn-original" type="button">원문</button>
+          </div>
+        </header>
+
+        <div class="viewer-body">
+          <div class="hybrid-shell">
+            <div class="hybrid-status" aria-live="polite">
+              <span class="mode-pill wait" id="mode-idle">대기</span>
+              <span class="mode-pill" id="mode-proxy">proxy</span>
+              <span class="mode-pill" id="mode-remote">remote</span>
+              <span class="mode-pill" id="mode-reader">reader</span>
+              <span class="mode-pill" id="mode-external">external</span>
+            </div>
+
+            <div class="hybrid-stage">
+              <div class="proxy-stage">
+                <div class="proxy-bar">
+                  <input
+                    id="proxy-url-input"
+                    type="url"
+                    placeholder="현재 탐험 URL"
+                    aria-label="현재 탐험 URL"
+                  />
+                  <button id="proxy-go-btn" type="button">이동</button>
+                </div>
+                <div id="viewer" class="proxy-view" aria-label="Proxy content"></div>
+              </div>
+            </div>
+
+            <div class="companion-bar">
+              <div>
+                <strong>AI Companion</strong><br />
+                <span id="companion-text">
+                  탐험저장은 날짜·시각·분야·사이트명·시작 URL을 세계관 탐험 기록으로
+                  저장합니다.
+                </span>
+              </div>
+              <span class="badge">localStorage 저장</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="loading-template">
+      <div class="state-card state-loading">
+        <div class="state-flag">Loading</div>
+        <h2>탐험 경로를 불러오는 중</h2>
+        <p>Proxy Browser가 선택한 문서를 가져오고 있습니다.</p>
+      </div>
+    </template>
+
+    <template id="external-template">
+      <div class="state-card">
+        <div class="state-flag">External</div>
+        <h2>외부 서비스 모드</h2>
+        <p>
+          이 사이트는 강한 JavaScript, 검색, 예약, 또는 지도 기능이 있는
+          서비스라서 브라우저 내부 proxy 대신 원문으로 여는 방식이 맞습니다.
+        </p>
+        <div class="state-actions">
+          <button type="button" data-external-open>원문 열기</button>
+          <button type="button" data-external-copy>URL복사</button>
+        </div>
+      </div>
+    </template>
+
+    <template id="blocked-template">
+      <div class="state-card">
+        <div class="state-flag">Blocked</div>
+        <h2>원문이 보안 검문소에 막혔습니다</h2>
+        <p data-blocked-message>
+          이 사이트는 원문이 Vercel 보안 챌린지에 걸려 proxy 안에서 열리지 않습니다.
+        </p>
+        <div class="state-actions">
+          <button type="button" data-blocked-open>원문 열기</button>
+          <button type="button" data-blocked-copy>URL복사</button>
+        </div>
+      </div>
+    </template>
+
+    <template id="remote-template">
+      <div class="remote-shell">
+        <div class="remote-stage" data-remote-stage>
+          <img class="remote-image" data-remote-frame alt="Remote page view" />
+          <div class="remote-overlay" data-remote-overlay hidden>Loading</div>
+        </div>
+        <div class="remote-meta">
+          <div><b>Session</b> <span data-remote-session>none</span></div>
+          <div><b>Status</b> <span data-remote-status>idle</span></div>
+          <div><b>URL</b> <span data-remote-url>-</span></div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

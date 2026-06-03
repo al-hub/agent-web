@@ -4,31 +4,34 @@
 
 - GeekNews
 - Simon Willison
-- Quanta Magazine
 - HORIZON
+- Quanta Magazine
 - KDI
 - KIET
+- Morgan Housel
 - World History Encyclopedia
 - The Marginalian
-- Morgan Housel
 - 서울사랑
+
+## Remote
+
+- Nautilus
+- Visual Capitalist
 
 ## Reader
 
-- Visual Capitalist
 - Dezeen
 - ArchDaily
 - Designboom
-- Aeon
-- Nautilus
 - Smithsonian Magazine
 - Atlas Obscura
 
 ## External
 
+- Aeon
 - Google Arts & Culture
 - SpaceAware
-- 스테이폴리오
+- Stayfolio
 - 블루리본
 - Tablet Hotels
 - Mr & Mrs Smith

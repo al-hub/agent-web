@@ -1,0 +1,5 @@
+node_modules/
+.chromium-libs/
+tmp/
+*.deb
+*.Zone.Identifier

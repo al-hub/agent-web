@@ -1,0 +1,11 @@
+{
+  "name": "hybrid-explorer-v15",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}
